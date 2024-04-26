@@ -7,7 +7,7 @@ public class CameraMovement : MonoBehaviour
     float speed = 0.5f;
     float acceleration = 0.03f;
     float maxSpeed = 0.8f;
-    bool movement = true;
+    bool movement;
 
     // Start is called before the first frame update
     void Start()
