@@ -17,10 +17,4 @@ public class FullScreen : MonoBehaviour
         tempScale.x = screenWidth / spriteWidth;
         transform.localScale = tempScale;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
