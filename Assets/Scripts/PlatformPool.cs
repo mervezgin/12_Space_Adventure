@@ -6,6 +6,7 @@ public class PlatformPool : MonoBehaviour
 {
     [SerializeField] GameObject platformPrefab;
     [SerializeField] GameObject playerPrefab;
+    [SerializeField] GameObject fatalPlatformPrefab;
 
     [SerializeField] float distanceBetweenPlatforms;
 
@@ -37,12 +38,11 @@ public class PlatformPool : MonoBehaviour
         GameObject player = Instantiate(playerPrefab, playerPosition, Quaternion.identity);
         GameObject firstPlatform = Instantiate(platformPrefab, platformPosition, Quaternion.identity);
 
+        firstPlatform.GetComponent<Platform>().Move = true;
+        player.transform.parent = firstPlatform.transform;
         platforms.Add(firstPlatform);
 
         NextPlatformPosition();
-
-        firstPlatform.GetComponent<Platform>().Move = false;
-
         for (int i = 0; i < 8; i++)
         {
             GameObject platform = Instantiate(platformPrefab, platformPosition, Quaternion.identity);
@@ -52,6 +52,11 @@ public class PlatformPool : MonoBehaviour
 
             NextPlatformPosition();
         }
+
+        GameObject fatalPlatform = Instantiate(fatalPlatformPrefab, platformPosition, Quaternion.identity);
+        fatalPlatform.GetComponent<FatalPlatform>().Move = true;
+        platforms.Add(fatalPlatform);
+        NextPlatformPosition();
     }
 
     void PlatformPlace()

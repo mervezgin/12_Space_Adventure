@@ -413,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 8890453644146763881, guid: 946053b2f3cdc443aaa3f2edb210064b, type: 3}
   playerPrefab: {fileID: 9131697774175270820, guid: 58f9a0cb9b32f4f34bdf27cd4e2fc139, type: 3}
+  fatalPlatformPrefab: {fileID: 4763826487216797803, guid: 1a5f7448c872b4a2d97db202b81738be, type: 3}
   distanceBetweenPlatforms: 3
 --- !u!4 &740959118
 Transform:
