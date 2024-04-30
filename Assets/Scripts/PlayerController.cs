@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float acceleration;
     [SerializeField] float deceleration;
+    [SerializeField] float jumpPower;
 
     // Start is called before the first frame update
     void Start()
@@ -50,5 +51,20 @@ public class PlayerController : MonoBehaviour
 
         transform.localScale = scale;
         transform.Translate(velocity * Time.deltaTime);
+
+        if (Input.GetKeyDown("space")) { StartTheJump(); }
+
+        if (Input.GetKeyUp("space")) { StopTheJump(); }
+    }
+
+    void StartTheJump()
+    {
+        playerRb2D.AddForce(new Vector2(0, jumpPower));
+        playerAnimator.SetBool("Jump", true);
+    }
+
+    void StopTheJump()
+    {
+        playerAnimator.SetBool("Jump", false);
     }
 }
