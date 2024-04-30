@@ -48,6 +48,7 @@ public class Platform : MonoBehaviour
         if (collider.gameObject.tag == "Feet")
         {
             GameObject.FindGameObjectWithTag("Player").transform.parent = transform;
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerController>().ResetTheJump();
         }
     }
 }

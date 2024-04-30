@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float acceleration;
     [SerializeField] float deceleration;
     [SerializeField] float jumpPower;
+    [SerializeField] int jumpLimit;
+
+    int jumpNumb;
 
     // Start is called before the first frame update
     void Start()
@@ -59,12 +62,21 @@ public class PlayerController : MonoBehaviour
 
     void StartTheJump()
     {
-        playerRb2D.AddForce(new Vector2(0, jumpPower));
-        playerAnimator.SetBool("Jump", true);
+        if (jumpNumb < jumpLimit)
+        {
+            playerRb2D.AddForce(new Vector2(0, jumpPower));
+            playerAnimator.SetBool("Jump", true);
+        }
     }
 
     void StopTheJump()
     {
         playerAnimator.SetBool("Jump", false);
+        jumpNumb++;
+    }
+
+    public void ResetTheJump()
+    {
+        jumpNumb = 0;
     }
 }
