@@ -45,6 +45,9 @@ TagManager:
   - name: Platform
     uniqueID: 2690472211
     locked: 0
-  - name: New Layer 2
+  - name: Player
     uniqueID: 350592489
+    locked: 0
+  - name: Canvas
+    uniqueID: 3175651125
     locked: 0
