@@ -49,7 +49,10 @@ public class PlatformPool : MonoBehaviour
 
             platforms.Add(platform);
             platform.GetComponent<Platform>().Move = true;
-
+            if (i % 2 == 0)
+            {
+                platform.GetComponent<Golden>().GoldenOpen();
+            }
             NextPlatformPosition();
         }
 
@@ -69,7 +72,15 @@ public class PlatformPool : MonoBehaviour
             platforms[i + 5] = platforms[i];
             platforms[i] = temp;
             platforms[i + 5].transform.position = platformPosition;
-
+            if (platforms[i+5].gameObject.tag == "Platform")
+            {
+                platforms[i + 5].GetComponent<Golden>().GoldenClose();
+                float randomGolden = Random.Range(0.0f, 1.0f);
+                if (randomGolden > 0.5f)
+                {
+                    platforms[i + 5].GetComponent<Golden>().GoldenOpen();
+                }
+            }
             NextPlatformPosition();
         }
     }

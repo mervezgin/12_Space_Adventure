@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Feet
+  - Platform
+  - FatalPlatform
   layers:
   - Default
   - TransparentFX
@@ -50,4 +52,7 @@ TagManager:
     locked: 0
   - name: Canvas
     uniqueID: 3175651125
+    locked: 0
+  - name: Golden
+    uniqueID: 3604275989
     locked: 0
