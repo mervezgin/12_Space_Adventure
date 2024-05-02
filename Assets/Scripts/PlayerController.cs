@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             playerRb2D.AddForce(new Vector2(0, jumpPower));
             playerAnimator.SetBool("Jump", true);
+            FindObjectOfType<SliderControl>().SliderValue(jumpLimit, jumpNumb);
         }
     }
 
@@ -121,11 +122,13 @@ public class PlayerController : MonoBehaviour
     {
         playerAnimator.SetBool("Jump", false);
         jumpNumb++;
+        FindObjectOfType<SliderControl>().SliderValue(jumpLimit, jumpNumb);
     }
 
     public void ResetTheJump()
     {
         jumpNumb = 0;
+        FindObjectOfType<SliderControl>().SliderValue(jumpLimit, jumpNumb);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
