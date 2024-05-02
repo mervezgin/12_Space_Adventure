@@ -70,26 +70,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp("space")) { StopTheJump(); }
     }
 
-    void StartTheJump()
-    {
-        if (jumpNumb < jumpLimit)
-        {
-            playerRb2D.AddForce(new Vector2(0, jumpPower));
-            playerAnimator.SetBool("Jump", true);
-        }
-    }
-
-    void StopTheJump()
-    {
-        playerAnimator.SetBool("Jump", false);
-        jumpNumb++;
-    }
-
-    public void ResetTheJump()
-    {
-        jumpNumb = 0;
-    }
-
     void JoystickControl()
     {
         float moveInput = joystick.Horizontal;
@@ -125,6 +105,34 @@ public class PlayerController : MonoBehaviour
         {
             jumping = false;
             StopTheJump();
+        }
+    }
+
+    void StartTheJump()
+    {
+        if (jumpNumb < jumpLimit)
+        {
+            playerRb2D.AddForce(new Vector2(0, jumpPower));
+            playerAnimator.SetBool("Jump", true);
+        }
+    }
+
+    void StopTheJump()
+    {
+        playerAnimator.SetBool("Jump", false);
+        jumpNumb++;
+    }
+
+    public void ResetTheJump()
+    {
+        jumpNumb = 0;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Death")
+        {
+            FindObjectOfType<GameManager>().EndTheGame();
         }
     }
 }
