@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
         FindObjectOfType<PointOnGameScreen>().GameOver();
+        FindObjectOfType<PlayerController>().GameOver();
         UIClose();
     }
 

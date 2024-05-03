@@ -11,7 +11,9 @@ public class PointOnGameScreen : MonoBehaviour
     [SerializeField] Text gameOverGoldenText;
 
     int point;
+    int maxPoint;
     int golden;
+    int maxGolden;
     bool pickPoint = true;
 
     // Start is called before the first frame update
@@ -41,5 +43,50 @@ public class PointOnGameScreen : MonoBehaviour
         pickPoint = false;
         gameOverPointText.text = "Point: " + point;
         gameOverGoldenText.text = " X" + golden;
+
+        if (Options.EasyValueRead() == 1)
+        {
+            maxPoint = Options.EasyPointValueRead();
+            maxGolden = Options.EasyGoldenValueRead();
+
+            if (point > maxPoint)
+            {
+                Options.EasyPointValueSend(point);
+            }
+            if (golden > maxGolden)
+            {
+                Options.EasyGoldenValueSend(golden);
+            }
+        }
+
+        if (Options.MediumValueRead() == 1)
+        {
+            maxPoint = Options.MediumPointValueRead();
+            maxGolden = Options.MediumGoldenValueRead();
+
+            if (point > maxPoint)
+            {
+                Options.MediumPointValueSend(point);
+            }
+            if (golden > maxGolden)
+            {
+                Options.MediumGoldenValueSend(golden);
+            }
+        }
+
+        if (Options.HardValueRead() == 1)
+        {
+            maxPoint = Options.HardPointValueRead();
+            maxGolden = Options.HardGoldenValueRead();
+
+            if (point > maxPoint)
+            {
+                Options.HardPointValueSend(point);
+            }
+            if (golden > maxGolden)
+            {
+                Options.HardGoldenValueSend(golden);
+            }
+        }
     }
 }

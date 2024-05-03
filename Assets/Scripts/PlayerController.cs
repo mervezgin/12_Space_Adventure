@@ -138,4 +138,9 @@ public class PlayerController : MonoBehaviour
             FindObjectOfType<GameManager>().EndTheGame();
         }
     }
+
+    public void GameOver()
+    {
+        Destroy(gameObject);
+    }
 }

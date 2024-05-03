@@ -6,16 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class PointControl : MonoBehaviour
 {
+    [SerializeField] Text easyPoint, easyGolden, mediumPoint, mediumGolden, hardPoint, hardGolden;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        easyPoint.text = "Point: " + Options.EasyPointValueRead();
+        easyGolden.text = " X" + Options.EasyGoldenValueRead();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        mediumPoint.text = "Point: " + Options.MediumPointValueRead();
+        mediumGolden.text = " X" + Options.MediumGoldenValueRead();
+
+        hardPoint.text = "Point: " + Options.HardPointValueRead();
+        hardGolden.text = " X" + Options.HardGoldenValueRead();
     }
 
     public void Menu()

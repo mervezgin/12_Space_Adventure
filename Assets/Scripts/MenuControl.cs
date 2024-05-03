@@ -9,18 +9,14 @@ public class MenuControl : MonoBehaviour
     [SerializeField] Sprite[] musicIcons;
     [SerializeField] Button musicButton;
 
-    bool musicOpen = true;
+    //bool musicOpen = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (Options.IsTheRecord()==false) { Options.EasyValueSend(1); }
+        MusicSettingsCheck();
+        if (Options.MusicOpenIsThereRecord()==false) { Options.MusicOpenSend(1); }
     }
 
     public void StartTheGame()
@@ -40,15 +36,28 @@ public class MenuControl : MonoBehaviour
 
     public void Music()
     {
-        if (musicOpen)
+        if (Options.MusicOpenRead() == 1)
         {
-            musicOpen = false;
+            Options.MusicOpenSend(0);
             musicButton.image.sprite = musicIcons[0];
         }
         else
         {
-            musicOpen = true;
+            Options.MusicOpenSend(1);
             musicButton.image.sprite = musicIcons[1];
+        }
+    }
+
+    void MusicSettingsCheck()
+    {
+        if (Options.MusicOpenRead() == 1)
+        {
+            musicButton.image.sprite = musicIcons[1];
+
+        }
+        else
+        {
+            musicButton.image.sprite = musicIcons[0];
         }
     }
 }
