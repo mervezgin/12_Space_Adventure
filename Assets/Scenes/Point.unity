@@ -1681,12 +1681,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ade54c1de164f17910a3c43a6ae7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easyPoint: {fileID: 0}
-  easyGolden: {fileID: 0}
-  mediumPoint: {fileID: 0}
-  mediumGolden: {fileID: 0}
-  hardPoint: {fileID: 0}
-  hardGolden: {fileID: 0}
+  easyPoint: {fileID: 2137113239}
+  easyGolden: {fileID: 1471002154}
+  mediumPoint: {fileID: 1764490925}
+  mediumGolden: {fileID: 1208245723}
+  hardPoint: {fileID: 1761257434}
+  hardGolden: {fileID: 787677210}
 --- !u!1 &1979572441
 GameObject:
   m_ObjectHideFlags: 0
