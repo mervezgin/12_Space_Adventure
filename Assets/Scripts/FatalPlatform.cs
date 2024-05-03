@@ -42,4 +42,12 @@ public class FatalPlatform : MonoBehaviour
             transform.position = pingPong;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Feet")
+        {
+            FindObjectOfType<GameManager>().EndTheGame();
+        }
+    }
 }
