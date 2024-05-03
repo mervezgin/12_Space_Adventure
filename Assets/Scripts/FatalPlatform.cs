@@ -15,8 +15,11 @@ public class FatalPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (Options.EasyValueRead() == 1) { randomSpeed = Random.Range(0.2f, 0.6f); }
+        if (Options.MediumValueRead() == 1) { randomSpeed = Random.Range(0.5f, 0.9f); }
+        if (Options.HardValueRead() == 1) { randomSpeed = Random.Range(0.8f, 1.2f); }
+
         boxCollider2D = GetComponent<BoxCollider2D>();
-        randomSpeed = Random.Range(0.5f, 1.0f);
 
         float objectWidth = boxCollider2D.bounds.size.x / 2;
 

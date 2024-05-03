@@ -15,11 +15,13 @@ public class Planets : MonoBehaviour
         {
             GameObject planet = new GameObject();
             SpriteRenderer spriteRenderer = planet.AddComponent<SpriteRenderer>();
-            spriteRenderer.sprite = (Sprite)sprites[i];
             Color spriteColor = spriteRenderer.color;
+
+            spriteRenderer.sprite = (Sprite)sprites[i];
             spriteColor.a = 0.5f;
             spriteRenderer.color = spriteColor;
             spriteRenderer.sortingLayerName = "Planet";
+
             Vector2 position = planet.transform.position;
             position.x = -10;
             planet.transform.position = position;
@@ -40,17 +42,17 @@ public class Planets : MonoBehaviour
         float xValue2 = Random.Range(-width, 0.0f);
         float yValue2 = Random.Range(refY, refY + height);
         GameObject planet2 = RandomPlanet();
-        planet1.transform.position = new Vector2(xValue2, yValue2);
+        planet2.transform.position = new Vector2(xValue2, yValue2);
 
         float xValue3 = Random.Range(-width, 0.0f);
         float yValue3 = Random.Range(refY-height, refY);
         GameObject planet3 = RandomPlanet();
-        planet1.transform.position = new Vector2(xValue3, yValue3);
+        planet3.transform.position = new Vector2(xValue3, yValue3);
 
         float xValue4 = Random.Range(0.0f, width);
         float yValue4 = Random.Range(refY-height, refY);
         GameObject planet4 = RandomPlanet();
-        planet1.transform.position = new Vector2(xValue4, yValue4);
+        planet4.transform.position = new Vector2(xValue4, yValue4);
     }
 
     GameObject RandomPlanet()

@@ -15,8 +15,8 @@ public class MenuControl : MonoBehaviour
     void Start()
     {
         if (Options.IsTheRecord()==false) { Options.EasyValueSend(1); }
-        MusicSettingsCheck();
         if (Options.MusicOpenIsThereRecord() == false) { Options.MusicOpenSend(1); }
+        MusicSettingsCheck();
     }
 
     public void StartTheGame()

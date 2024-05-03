@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class SettingControl : MonoBehaviour
 {
     [SerializeField] Button easyButton, mediumButton, hardButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +29,6 @@ public class SettingControl : MonoBehaviour
             mediumButton.interactable = true;
             hardButton.interactable = false;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void Menu()

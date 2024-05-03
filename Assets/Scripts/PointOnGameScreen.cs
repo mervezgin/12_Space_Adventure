@@ -36,6 +36,7 @@ public class PointOnGameScreen : MonoBehaviour
     {
         golden++;
         goldenText.text = " X" + golden;
+        FindObjectOfType<AudioControl>().GoldenVoice();
     }
 
     public void GameOver()

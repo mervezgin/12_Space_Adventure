@@ -115,6 +115,7 @@ public class PlayerController : MonoBehaviour
             playerRb2D.AddForce(new Vector2(0, jumpPower));
             playerAnimator.SetBool("Jump", true);
             FindObjectOfType<SliderControl>().SliderValue(jumpLimit, jumpNumb);
+            FindObjectOfType<AudioControl>().JumpVoice();
         }
     }
 

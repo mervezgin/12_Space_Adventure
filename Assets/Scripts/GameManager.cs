@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     public void EndTheGame()
     {
         gameOverPanel.SetActive(true);
+        FindObjectOfType<AudioControl>().GameOverVoice();
         FindObjectOfType<PointOnGameScreen>().GameOver();
         FindObjectOfType<PlayerController>().GameOver();
         UIClose();
