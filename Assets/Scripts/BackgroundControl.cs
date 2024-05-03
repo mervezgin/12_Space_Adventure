@@ -11,6 +11,7 @@ public class BackgroundControl : MonoBehaviour
     void Start()
     {
         backgroundPosition = transform.position.y;
+        FindObjectOfType<Planets>().PlanetPlace(backgroundPosition);
     }
 
     // Update is called once per frame
@@ -25,6 +26,7 @@ public class BackgroundControl : MonoBehaviour
     void BackgroundPlace()
     {
         backgroundPosition += distance * 2.0f;
+        FindObjectOfType<Planets>().PlanetPlace(backgroundPosition);
         Vector2 newPosition = new Vector2(0, backgroundPosition);
         transform.position = newPosition;
     }

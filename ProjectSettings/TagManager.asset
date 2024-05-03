@@ -45,15 +45,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3378391755
+    locked: 0
+  - name: Planet
+    uniqueID: 2732192269
+    locked: 0
   - name: Platform
     uniqueID: 2690472211
+    locked: 0
+  - name: Golden
+    uniqueID: 3604275989
     locked: 0
   - name: Player
     uniqueID: 350592489
     locked: 0
   - name: Canvas
     uniqueID: 3175651125
-    locked: 0
-  - name: Golden
-    uniqueID: 3604275989
     locked: 0
