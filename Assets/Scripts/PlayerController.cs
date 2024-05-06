@@ -32,11 +32,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if UNITY_EDITOR
+        /*#if UNITY_EDITOR
+                KeyBoardControl();
+        #else 
+                JoystickControl();
+        #endif*/
         KeyBoardControl();
-#else 
-        JoystickControl();
-#endif
     }
 
     void KeyBoardControl()
